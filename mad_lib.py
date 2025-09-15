@@ -1,0 +1,12 @@
+verb1 = input('Type a verb: ')
+adjective1 = input('Type a adjective: ')
+noun1 = input('Type a noun: ')
+int1 = input('Type a whole number greater than 2: ')
+verb2 = input('Type a verb: ')
+adjective2 = input('Type a adjective: ')
+decimal1 = input('Type a decimal greater than 5 but less than 12: ')
+verb3 = input('Type a verb: ')
+decimal2 = input('Type a speed in miles per hour: ')
+statement1 = input('Type a statement: ')
+
+print(f'You are getting ready to {verb1} when you notice there is a {adjective1} {noun1}. You then see that there are {int1} more in the distance {verb2}, but unlike the first, they are {adjective2}. They are {decimal1} miles away, and they are {verb3} towards you. They are quick, moving at a speed of {decimal2}, you panic and say {statement1} , and the world explodes.')
