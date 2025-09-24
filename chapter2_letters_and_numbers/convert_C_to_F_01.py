@@ -19,7 +19,7 @@
     
 ########## ENTER YER CODE BELOW THIS LINE ##########
 celsius = float(input('Enter a temperature in Celsius: '))
-print(f'{celsius} degrees Celcius is {celsius * 1.8 + 32} degrees Fahrenheit')
+print(f'{celsius} degrees Celsius is {celsius * 1.8 + 32} degrees Fahrenheit.')
 ########### END YER CODE ABOVE THIS LINE ###########
 
 

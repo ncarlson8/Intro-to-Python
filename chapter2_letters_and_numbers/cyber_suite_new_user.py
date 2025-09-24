@@ -23,9 +23,9 @@
 ########## ENTER YER CODE BELOW THIS LINE ##########
 name = input('Please enter your name: ')
 id = int(input('Please enter your user id: '))
-password_length = len(input('Please enter your password: '))
+password = input('Please enter your password: ')
 
-print(f'\nWelcome, {name}. Your ID is {id}.\n\nPASSWORD:\n{password_length * 'X'}')
+print(f'\nWelcome, {name}. Your ID is {id}.\n\nPASSWORD: \n{len(password) * 'X'}')
 ########### END YER CODE ABOVE THIS LINE ###########
     
 
