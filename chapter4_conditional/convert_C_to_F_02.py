@@ -14,7 +14,7 @@
 
 
 ########## ENTER YER CODE BELOW THIS LINE ##########
-print("===== Temperature converter =====\n\n 1. Convert from Celsius to Fahrenheit \n 2. Convert from Fahrenheit to Celsius")
+print("===== Temperature Converter =====\n\n  1. Convert from Celsius to Fahrenheit\n  2. Convert from Fahrenheit to Celsius")
 choice = input("\nPlease choose from the above menu: ")
 temp = float(input("Enter a temperature to convert: "))
 if choice == "1":
