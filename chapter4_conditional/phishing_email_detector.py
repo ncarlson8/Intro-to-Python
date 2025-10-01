@@ -1,8 +1,8 @@
 # FILE NAME - phishing_email_detector.py
 
-# NAME: 
-# DATE: 
-# BRIEF DESCRIPTION:  
+# NAME: Nick Carlson
+# DATE: 10/1/2025
+# BRIEF DESCRIPTION: Take the subject of an email and determine whether it could be a phishing attempt.
 
 
 
@@ -14,16 +14,19 @@
 
 
 ########## ENTER YER CODE BELOW THIS LINE ##########
+subject = input("Enter the email subject line: ")
 
+print("\nSECURITY ASSESSMENT:")
+if "urgent" in subject.lower() or "immediate action required" in subject.lower():
+    print(f"HIGH RISK: Possible phishing attempt.")
+elif "win" in subject.lower() or "free" in subject.lower():
+    print(f"MEDIUM RISK: Suspicious offer detected.")
+elif "password reset" in subject.lower():
+    print(f"LOW RISK: Verify legitimacy with sender.")
+else:
+    print(f"No phishing indicators detected.")
 
-
-
-
-
-
-
-
-
+print(f"------------------------\nAnalyzed subject: \"{subject}\"")
 ########### END YER CODE ABOVE THIS LINE ###########
 
     
@@ -78,7 +81,7 @@ Analyzed subject: "Did you request a password reset?"
 
 1. Was using `in` difficult or was it natural?
 
-
+It is fairly natural. It's easier than java.
 
 
 
@@ -97,7 +100,7 @@ Analyzed subject: "Did you request a password reset?"
 Please gauge your utilization of AI on the following spectrum. Place an "X" in front
 of the appropriate response. Only choose one of the following:
 
-[ ] I did not use AI at all for this lab.
+[X] I did not use AI at all for this lab.
 [ ] I wrote the initial draft of the software but had AI help me make it better.
 [ ] I fed the lab description to AI and had it generate a response but I modified it.
 [ ] AI created the entire program for me.

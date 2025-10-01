@@ -14,7 +14,22 @@
 
 
 ########## ENTER YER CODE BELOW THIS LINE ##########
+score = float(input("Enter a numerical grade (1-100): "))
 
+if score >= 100:
+    grade = 'A+'
+elif score >= 90:
+    grade = 'A'
+elif score >= 80:
+    grade = 'B'
+elif score >= 70:
+    grade = 'C'
+elif score >= 65:
+    grade = 'D'
+else:
+    grade = 'F'
+
+print(grade)
 ########### END YER CODE ABOVE THIS LINE ###########
 
     
@@ -68,7 +83,7 @@ D
 1. What is something you would tell a future student to be careful about when
    doing this lab?
 
-Make sure to use the correct comparisons(i.e. < vs <=)
+Make sure to use the correct comparisons(i.e. > vs >=)
 
 
 
