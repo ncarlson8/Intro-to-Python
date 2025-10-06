@@ -14,9 +14,10 @@
 
 
 ########## ENTER YER CODE BELOW THIS LINE ##########
+print("===== Grade Converter =====")
 score = float(input("Enter a numerical grade (1-100): "))
 
-if score >= 100:
+if score > 100:
     grade = 'A+'
 elif score >= 90:
     grade = 'A'
