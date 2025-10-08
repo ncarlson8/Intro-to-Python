@@ -1,8 +1,8 @@
 # FILE NAME - rectangle_redux.py
 
-# NAME: 
-# DATE: 
-# BRIEF DESCRIPTION:  
+# NAME: Nick Carlson
+# DATE: 10/8/2025
+# BRIEF DESCRIPTION: create a rectangle with a certain height based on user input
 
 
 
@@ -17,16 +17,13 @@
 
 
 ########## ENTER YER CODE BELOW THIS LINE ##########
+height = int(input("How tall would you like the rectangle? "))
+print("*****")
 
+for n in range(1, height + 1):
+    print("*   *")
 
-
-
-
-
-
-
-
-
+print("*****")
 ########### END YER CODE ABOVE THIS LINE ###########
 
 
