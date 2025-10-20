@@ -17,7 +17,7 @@
 
 
 ########## ENTER YER CODE BELOW THIS LINE ##########
-for n in range(1, 23):
+for n in range(0, 23):
     print(n)
 ########### END YER CODE ABOVE THIS LINE ###########
 
