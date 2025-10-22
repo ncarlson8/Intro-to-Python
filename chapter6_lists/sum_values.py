@@ -1,8 +1,8 @@
 # FILE NAME - sum_values.py
 
-# NAME: 
-# DATE: 
-# BRIEF DESCRIPTION:  
+# NAME: Nick Carlson
+# DATE: 10/22/2025
+# BRIEF DESCRIPTION: Sum each day's failed logins.
 
 
 
@@ -27,16 +27,23 @@
 #########################################
 
 ########## ENTER YER CODE BELOW THIS LINE ##########
+attempts = []
+print("Please enter failed login attempts")
+print("==================================\n")
+attempts.append(int(input("  Monday:    ")))
+attempts.append(int(input("  Tuesday:   ")))
+attempts.append(int(input("  Wednesday: ")))
+attempts.append(int(input("  Thursday:  ")))
+attempts.append(int(input("  Friday:    ")))
+print("\n\n===== FAILED LOGIN ATTEMPTS ANALYZER =====\n")
+print(f"Total failed login attempts for the week: {sum(attempts)}\n")
 
-
-
-
-
-
-
-
-
-
+if sum(attempts) > 100:
+    print("SECURITY ALERT: Weekly threshold of 100 attempts has been exceeded!")
+    print("Recommendation: Investigate for potential brute force attacks.")
+else:
+    print("Everything seems normal. It's quiet. Too quiet.")
+    print("Recommendation: Continue routine monitoring.")
 ########### END YER CODE ABOVE THIS LINE ###########
     
 
@@ -94,7 +101,7 @@ Recommendation: Investigate for potential brute force attacks.
 
 1. How did you sum the element in the list?
 
-
+with the sum() function
 
 
 
@@ -117,6 +124,6 @@ may impede your understanding. Please rate how well you understand the concepts 
 [ ] I understand very little about this lab.
 [ ] I am about 50/50 on this lab; I get parts of it but not the whole picture.
 [ ] I pretty much get it.
-[ ] I'm solid. Totally got it.
+[X] I'm solid. Totally got it.
 
 '''

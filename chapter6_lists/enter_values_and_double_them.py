@@ -1,8 +1,8 @@
 # FILE NAME - double_values.py
 
-# NAME: 
-# DATE: 
-# BRIEF DESCRIPTION: 
+# NAME: Nick Carlson
+# DATE: 10/22/2025
+# BRIEF DESCRIPTION: take a series of inputs, sort them, and then double them.
 
    
 
@@ -43,14 +43,17 @@ print()
 ########## ENTER YER CODE BELOW THIS LINE ##########
 
 # HINT: It might be easier to create a second list
+print("ORIGINAL -          ", end = "")
+print(numbers)
 
+numbers.sort()
+print("ORIGINAL (sorted) - ", end = "")
+print(numbers)
 
-
-
-
-
-
-
+for num in numbers:
+    double_numbers.append(num * 2)
+print("DOUBLED -           ", end = "")
+print(double_numbers)
 ########### END YER CODE ABOVE THIS LINE ###########    
 
 
@@ -119,7 +122,7 @@ DOUBLED -           [-1046, -108, 0, 4, 386, 530, 590, 926, 1148]
 
 1. How did you solve the problem of doubling the values?
 
-
+I used a for loop and multiplied each element by 2.
 
 
 
@@ -144,6 +147,6 @@ may impede your understanding. Please rate how well you understand the concepts 
 [ ] I understand very little about this lab.
 [ ] I am about 50/50 on this lab; I get parts of it but not the whole picture.
 [ ] I pretty much get it.
-[ ] I'm solid. Totally got it.
+[X] I'm solid. Totally got it.
 
 '''

@@ -1,8 +1,8 @@
 # FILE NAME - average_values.py
 
-# NAME: 
-# DATE: 
-# BRIEF DESCRIPTION: 
+# NAME: Nick Carlson
+# DATE: 10/22/2025
+# BRIEF DESCRIPTION: take the sum and average of a list of numbers
 
 
 
@@ -37,16 +37,13 @@ while True:
 #########################################
 
 ########## ENTER YER CODE BELOW THIS LINE ##########
+sum = 0
+for num in numbers:
+    sum += num
 
-
-
-
-
-
-
-
-
-
+print(f"NUMBERS =  {numbers}")
+print(f"SUM = {sum}")
+print(f"AVERAGE =  {float(sum/len(numbers))}")
 ########### END YER CODE ABOVE THIS LINE ###########
 
 
@@ -110,7 +107,7 @@ AVERAGE =  1.0
 
 1. What is the hardest part of this lab?
 
-
+ensuring the average is a float
 
 
 
@@ -129,7 +126,7 @@ AVERAGE =  1.0
 Please gauge your utilization of AI on the following spectrum. Place an "X" in front
 of the appropriate response. Only choose one of the following:
 
-[ ] I did not use AI at all for this lab.
+[X] I did not use AI at all for this lab.
 [ ] I wrote the initial draft of the software but had AI help me make it better.
 [ ] I fed the lab description to AI and had it generate a response but I modified it.
 [ ] AI created the entire program for me.
@@ -144,6 +141,6 @@ may impede your understanding. Please rate how well you understand the concepts 
 [ ] I understand very little about this lab.
 [ ] I am about 50/50 on this lab; I get parts of it but not the whole picture.
 [ ] I pretty much get it.
-[ ] I'm solid. Totally got it.
+[X] I'm solid. Totally got it.
 
 '''

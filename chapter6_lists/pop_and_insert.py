@@ -1,8 +1,8 @@
 # FILE NAME - pop_and_insert.py
 
-# NAME: 
-# DATE: 
-# BRIEF DESCRIPTION:  
+# NAME: Nick Carlson
+# DATE: 10/22/2025
+# BRIEF DESCRIPTION: Print the first value of a list, then move it the back.
 
 
 
@@ -47,16 +47,9 @@ print(customers)
 #########################################
 
 ########## ENTER YER CODE BELOW THIS LINE ##########
-
-
-
-
-
-
-
-
-
-
+driver_name = customers.pop(0)
+customers.append(driver_name)
+print(customers)
 ########### END YER CODE ABOVE THIS LINE ###########
     
 
@@ -107,7 +100,7 @@ Enter the name of the customer: EOF
 
 1. How did you move the element in the list?
 
-
+I used pop() and append()
 
 
 
@@ -130,6 +123,6 @@ may impede your understanding. Please rate how well you understand the concepts 
 [ ] I understand very little about this lab.
 [ ] I am about 50/50 on this lab; I get parts of it but not the whole picture.
 [ ] I pretty much get it.
-[ ] I'm solid. Totally got it.
+[X] I'm solid. Totally got it.
 
 '''
