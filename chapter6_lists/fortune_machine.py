@@ -1,8 +1,8 @@
 # FILE NAME - fortune_machine.py
 
-# NAME: 
-# DATE: 
-# BRIEF DESCRIPTION:  
+# NAME: Nick Carlson
+# DATE: 10/22/2025
+# BRIEF DESCRIPTION: Input a number of fortunes, then output one and then ask if they want another, and continue like that.
 
 
 
@@ -30,16 +30,26 @@ import random
 #########################################
 
 ########## ENTER YER CODE BELOW THIS LINE ##########
+print("=======================================\nWelcome to the Fortune Telling Machine!\n=======================================")
+print("\n\nEnter some fortunes. Type \"DONE\" when you are through.")
 
+fortunes = []
+con = 0
+while con != 1:
+    fortunes.append(input("Enter a fortune: "))
+    if fortunes[-1] == "DONE":
+        fortunes.remove("DONE")
+        con += 1
+print()
 
+more = "y"
+while more == "y":
+    print(random.choice(fortunes))
+    print()
+    more = input("Another fortune (y/n)? ")
 
-
-
-
-
-
-
-
+print("\n\nThank you for using the Fortune Telling Machine!")
+print("Smash that LIKE and Subscribe button and tell your friends!")
 ########### END YER CODE ABOVE THIS LINE ###########
 
 

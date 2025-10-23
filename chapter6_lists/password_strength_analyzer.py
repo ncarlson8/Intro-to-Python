@@ -16,16 +16,70 @@ import random
 
 
 ########## ENTER YER CODE BELOW THIS LINE ##########
+import string
+
+print(f"===== PASSWORD STRENGTH CHECKER =====\nThis tool analyzes your password and rates its strength.\n")
+password = input("Enter a password to check: ")
+
+points = 0
+up_count = 0
+low_count = 0
+spec_count = 0
+digit_count = 0
+length = len(password)
+
+print(f"\n===== PASSWORD ANALYSIS =====")
+
+if length >= 15:
+    points += 8
+elif length >= 8:
+    points += 5
+
+for char in password:
+    if char in string.ascii_uppercase:
+        up_count += 1
+    elif char in string.ascii_lowercase:
+        low_count += 1
+    elif char in string.digits:
+        digit_count += 1
+    else:
+        spec_count += 1
+    
+
+if up_count > 2:
+    points += 8
+elif up_count == 2:
+    points += 4
+elif up_count == 1:
+    points += 2
+if low_count > 2:
+    points += 8
+elif low_count == 2:
+    points += 4
+elif low_count == 1:
+    points += 2
+if spec_count > 2:
+    points += 8
+elif spec_count == 2:
+    points += 4
+elif spec_count == 1:
+    points += 2
+if digit_count > 2:
+    points += 8
+elif digit_count == 2:
+    points += 4
+elif digit_count == 1:
+    points += 2
 
 
+print(f"Length: {length} characters")
+print(f"Uppercase letters: {up_count}")
+print(f"Lowercase letters: {low_count}")
+print(f"Digits: {digit_count}")
+print(f"Special characters: {spec_count}")
 
-
-
-
-
-
-
-
+print(f"\nTotal Score: {points/40}")
+print(f"Strength Percentage: {points*2.5}")
 ########### END YER CODE ABOVE THIS LINE ###########
 
 
@@ -149,6 +203,6 @@ may impede your understanding. Please rate how well you understand the concepts 
 [ ] I understand very little about this lab.
 [ ] I am about 50/50 on this lab; I get parts of it but not the whole picture.
 [ ] I pretty much get it.
-[ ] I'm solid. Totally got it.
+[X] I'm solid. Totally got it.
 
 '''
