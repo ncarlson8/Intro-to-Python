@@ -1,8 +1,8 @@
 # FILE NAME - mfa_simulator.py
 
-# NAME: 
-# DATE: 
-# BRIEF DESCRIPTION:  
+# NAME: Nick Carlson
+# DATE: 10/23/2025
+# BRIEF DESCRIPTION: receive a seed, randomly generate 10 6 digit numbers, show them to the user, then receive a code, if it is correct, then give access.
 
 
 
@@ -16,16 +16,27 @@ import random
 
 
 ########## ENTER YER CODE BELOW THIS LINE ##########
+random.seed(int(input("ENTER SEED FOR SIMULATION: ")))
+print("\n===============================\n  SIMULATING CODE GENERATION   \n===============================\n")
 
+codes = []
+x = 1
+while x <= 10:
+    codes.append(random.randint(100000, 999999))
+    print(f"Backup code: {codes[x-1]}")
+    x += 1
 
-
-
-
-
-
-
-
-
+print(f"\n===============================\n     SIMULATING CODE USE       \n===============================")
+print(f"\nYou have 10 codes remaining.")
+given = int(input("Enter a valid code: "))
+if given in codes:
+    print("\nAccess Granted\n")
+    codes.remove(given)
+    print(f"You have 9 codes remaining.\n")
+    for code in codes:
+        print(f"Backup code: {code}")
+else:
+    print("\nAccess Denied")
 ########### END YER CODE ABOVE THIS LINE ###########
 
 
@@ -162,7 +173,7 @@ Backup code: 921872
 
 1. This program had multiple steps - what was the hardest for you?
 
-
+remembering the newlines in the print statements.
 
 
 
@@ -185,6 +196,6 @@ may impede your understanding. Please rate how well you understand the concepts 
 [ ] I understand very little about this lab.
 [ ] I am about 50/50 on this lab; I get parts of it but not the whole picture.
 [ ] I pretty much get it.
-[ ] I'm solid. Totally got it.
+[X] I'm solid. Totally got it.
 
 '''
