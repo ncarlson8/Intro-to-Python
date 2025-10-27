@@ -1,8 +1,8 @@
 # FILE NAME - password_strength_analyzer.py
 
-# NAME: 
-# DATE: 
-# BRIEF DESCRIPTION:  
+# NAME: Nick Carlson
+# DATE: 10/22/2025
+# BRIEF DESCRIPTION: checks a password's strength
 
 
 
