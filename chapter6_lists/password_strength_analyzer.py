@@ -28,8 +28,6 @@ spec_count = 0
 digit_count = 0
 length = len(password)
 
-print(f"\n===== PASSWORD ANALYSIS =====")
-
 if length >= 15:
     points += 8
 elif length >= 8:
@@ -72,14 +70,14 @@ elif digit_count == 1:
     points += 2
 
 
-print(f"Length: {length} characters")
-print(f"Uppercase letters: {up_count}")
-print(f"Lowercase letters: {low_count}")
-print(f"Digits: {digit_count}")
-print(f"Special characters: {spec_count}")
+print(f"Length: ({length} characters)")
+print(f"Uppercase letters: ({up_count} uppercase letter(s))")
+print(f"Lowercase letters: ({low_count} lowercase letter(s))")
+print(f"Digits: ({digit_count} number(s))")
+print(f"Special characters: ({spec_count} special character(s))")
 
 print(f"\nTotal Score: {points/40}")
-print(f"Strength Percentage: {points*2.5}")
+print(f"Strength Percentage: {points*2.5}%")
 ########### END YER CODE ABOVE THIS LINE ###########
 
 
@@ -180,7 +178,7 @@ Strength Percentage: 100.0%
 1. This is one of your first experiences with larger programs - what are three things
    that were challenging for you?
 
-
+I just modified my existing code to better fit this program, this just required a bit more detail.
 
 
 
