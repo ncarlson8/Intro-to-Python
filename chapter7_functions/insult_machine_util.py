@@ -59,6 +59,7 @@ def goodbye():
     '''
     This function should output four lines (one blank line and three lines of text as described in the SAMPLE OUTPUT).
     '''    
+    print("\n---------------------------------------------\nThank you for playing the Insulternator 3500!\n---------------------------------------------")
 
 
 
