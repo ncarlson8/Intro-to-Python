@@ -18,8 +18,8 @@ import random
 ########## ENTER YER CODE BELOW THIS LINE ##########
 import string
 
-print(f"===== PASSWORD STRENGTH CHECKER =====\nThis tool analyzes your password and rates its strength.\n")
-password = input("Enter a password to check: ")
+password = input("Enter your password: ")
+print(f"\nPassword Analysis Report\n-------------------------")
 
 points = 0
 up_count = 0
@@ -30,8 +30,12 @@ length = len(password)
 
 if length >= 15:
     points += 8
+    print(f"LENGTH: 8 points ({length} characters)")
 elif length >= 8:
     points += 5
+    print(f"LENGTH: 5 points ({length} characters)")
+else:
+    print(f"LENGTH: 0 points ({length} characters)")
 
 for char in password:
     if char in string.ascii_uppercase:
@@ -46,35 +50,49 @@ for char in password:
 
 if up_count > 2:
     points += 8
+    print(f"UPPERCASE: 8 points ({up_count} uppercase letter(s))")
 elif up_count == 2:
     points += 4
+    print(f"UPPERCASE: 4 points ({up_count} uppercase letter(s))")
 elif up_count == 1:
     points += 2
+    print(f"UPPERCASE: 2 points ({up_count} uppercase letter(s))")
+else:
+    print(f"UPPERCASE: 0 points ({up_count} uppercase letter(s))")
 if low_count > 2:
     points += 8
+    print(f"LOWERCASE: 8 points ({low_count} lowercase letter(s))")
 elif low_count == 2:
     points += 4
+    print(f"LOWERCASE: 4 points ({low_count} lowercase letter(s))")
 elif low_count == 1:
     points += 2
-if spec_count > 2:
-    points += 8
-elif spec_count == 2:
-    points += 4
-elif spec_count == 1:
-    points += 2
+    print(f"LOWERCASE: 2 points ({low_count} lowercase letter(s))")
+else:
+    print(f"LOWERCASE: 0 points ({low_count} lowercase letter(s))")
 if digit_count > 2:
     points += 8
+    print(f"NUMBERS: 8 points ({digit_count} number(s))")
 elif digit_count == 2:
     points += 4
+    print(f"NUMBERS: 4 points ({digit_count} number(s))")
 elif digit_count == 1:
     points += 2
-
-
-print(f"Length: ({length} characters)")
-print(f"Uppercase letters: ({up_count} uppercase letter(s))")
-print(f"Lowercase letters: ({low_count} lowercase letter(s))")
-print(f"Digits: ({digit_count} number(s))")
-print(f"Special characters: ({spec_count} special character(s))")
+    print(f"NUMBERS: 2 points ({digit_count} number(s))")
+else:
+    print(f"NUMBERS: 0 points ({digit_count} number(s))")
+if spec_count > 2:
+    points += 8
+    print(f"SPECIAL CHARACTERS: 8 points ({spec_count} special character(s))")
+elif spec_count == 2:
+    points += 4
+    print(f"SPECIAL CHARACTERS: 4 points ({spec_count} special character(s))")
+elif spec_count == 1:
+    points += 2
+    print(f"SPECIAL CHARACTERS: 2 points ({spec_count} special character(s))")
+else:
+    print(f"SPECIAL CHARACTERS: 0 points ({spec_count} special character(s))")
+    
 
 print(f"\nTotal Score: {points/40}")
 print(f"Strength Percentage: {points*2.5}%")
