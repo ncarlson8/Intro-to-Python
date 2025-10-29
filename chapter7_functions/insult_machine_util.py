@@ -8,13 +8,17 @@ insults = [
     'When you sing, birds explode.',
     'Your presence causes hard drives to scratch.',
     'Misfortune envies you.'
+    'You have a personality that cults love.'
 ]
 
 def welcome():
     '''
     This function should output four lines (three lines of text as described in the SAMPLE OUTPUT and one blank line).
     '''    
-    print("---------------------------------\nWelcome to the Insulternator 3500\n---------------------------------")
+    print()
+    print("---------------------------------")
+    print("Welcome to the Insulternator 3500")
+    print("---------------------------------")
 
 
 def show_all_insults():
@@ -59,7 +63,10 @@ def goodbye():
     '''
     This function should output four lines (one blank line and three lines of text as described in the SAMPLE OUTPUT).
     '''    
-    print("\n---------------------------------------------\nThank you for playing the Insulternator 3500!\n---------------------------------------------")
+    print()
+    print("---------------------------------------------")
+    print("Thank you for playing the Insulternator 3500!")
+    print("---------------------------------------------")
 
 
 
