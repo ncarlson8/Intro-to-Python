@@ -1,0 +1,3 @@
+Bruce Lee, VIP: False, Arrival Time: 2025-11-17 16:33:36
+Charlemagne, VIP: False, Arrival Time: 2025-11-17 16:34:04
+Dr. Mike, VIP: True, Arrival Time: 2025-11-17 16:34:10
