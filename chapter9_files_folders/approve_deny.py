@@ -39,16 +39,23 @@ for url in deny_list:
     if url.strip() == url:
         deny = True
         print("\nACCESS DENIED")
-        part = "BLOCKED URL: "
+        print(f"--------------------------------------------------\n       BLOCKED URL: {url}")
+        print("--------------------------------------------------\nThis website has been blocked by your organization's web filter.\nReason: This URL is on the deny list.\nIf you believe this is an error, please contact IT support.")
+        print("--------------------------------------------------")
 
 file.close()
 
 if approved == False and denied == False:
     print("\nURL UNDER REVIEW")
+    print(f"--------------------------------------------------\n       PENDING REVIEW: {url}")
+    print("--------------------------------------------------\nThis website is not on the approve or deny lists.\nIt has been submitted for review by the security team.\nAccess is currently restricted until review is complete.\nPlease check back later or contact IT if urgent access is needed.")
+    print("--------------------------------------------------")
+    print("\nURL has been added to review.txt for security team review.")
     file = open("review.txt", "a")
     file.write(f"{url}\n")
     file.close()
 
+print("\nThis access attempt has been logged to log.txt")
 file = open("log.txt", "a")
 file.write(url)
 ########### END YER CODE ABOVE THIS LINE ###########
