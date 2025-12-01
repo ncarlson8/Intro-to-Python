@@ -19,13 +19,12 @@ def encode_data():
     file = open(filename, "r")
 
     # GET DATA
-    data = file.readlines()
+    data = file.read()
     convert = data.encode('ascii')
     base64_bytes = base64.b64encode(convert)
-    base64_string = base64_bytes.decode('ascii')
 
     # OUTPUT ENCODED DATA
-    print(base64_string)
+    print(base64_bytes)
 
 
 
