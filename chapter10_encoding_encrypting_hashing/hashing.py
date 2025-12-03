@@ -5,7 +5,11 @@ def main():
 
 def hashing():
 
-
+    message = input("Enter the message to hash: ")
+    message_bytes = message.encode()
+    hashed = hashlib.sha256(message_bytes)
+    hexhash = hashed.hexdigest()
+    print(f"Hashed:  {hexhash}")
 
 
 
