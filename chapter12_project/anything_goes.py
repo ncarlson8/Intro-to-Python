@@ -33,7 +33,7 @@ def fast_scandir(dirname):
 
 print(fast_scandir("./chapter12_project"))
 
-# Source - https://stackoverflow.com/a
+# Source - https://stackoverflow.com/questions/11968976/list-files-only-in-the-current-directory
 # Posted by sloth, modified by community. See post 'Timeline' for change history
 # Retrieved 2025-12-08, License - CC BY-SA 4.0
 
