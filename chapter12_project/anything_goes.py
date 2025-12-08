@@ -9,9 +9,37 @@
 # Menu for choosing one of the three, then another menu to show only a certain genre, favorites, or others
 # can then choose a specific book, song, movie, etc. to bring up a brief description or synopsis.
 
+import os
 
+# 1 From here to * is sourced from https://www.geeksforgeeks.org/python/python-list-all-files-in-directory-and-subdirectories/
+def list_files_walk(start_path='.'):
+    for root, dirs, files in os.walk(start_path):
+        for file in files:
+            print(os.path.join(root, file))
 
+# Specify the directory path you want to start from
+directory_path = './chapter12_project'
+list_files_walk(directory_path) # *
 
+# Source - https://stackoverflow.com/questions/973473/getting-a-list-of-all-subdirectories-in-the-current-directory
+# Posted by user136036, modified by community. See post 'Timeline' for change history
+# Retrieved 2025-12-08, License - CC BY-SA 4.0
+
+def fast_scandir(dirname):
+    subfolders= [f.path for f in os.scandir(dirname) if f.is_dir()]
+    for dirname in list(subfolders):
+        subfolders.extend(fast_scandir(dirname))
+    return subfolders
+
+print(fast_scandir("./chapter12_project"))
+
+# Source - https://stackoverflow.com/a
+# Posted by sloth, modified by community. See post 'Timeline' for change history
+# Retrieved 2025-12-08, License - CC BY-SA 4.0
+
+import os
+files = [f for f in os.listdir('.') if os.path.isfile(f)]
+print(files)
 
 
 
