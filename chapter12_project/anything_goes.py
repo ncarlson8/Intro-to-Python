@@ -11,6 +11,7 @@
 
 import os
 
+# lists all files and directories via path
 # 1 From here to * is sourced from https://www.geeksforgeeks.org/python/python-list-all-files-in-directory-and-subdirectories/
 def list_files_walk(start_path='.'):
     for root, dirs, files in os.walk(start_path):
@@ -18,12 +19,13 @@ def list_files_walk(start_path='.'):
             print(os.path.join(root, file))
 
 # Specify the directory path you want to start from
-directory_path = './chapter12_project'
+directory_path = os.curdir
 list_files_walk(directory_path) # *
 
 # Source - https://stackoverflow.com/questions/973473/getting-a-list-of-all-subdirectories-in-the-current-directory
 # Posted by user136036, modified by community. See post 'Timeline' for change history
 # Retrieved 2025-12-08, License - CC BY-SA 4.0
+# makes a list with all subdirectories in specified directory(folder)
 
 def fast_scandir(dirname):
     subfolders= [f.path for f in os.scandir(dirname) if f.is_dir()]
@@ -31,19 +33,39 @@ def fast_scandir(dirname):
         subfolders.extend(fast_scandir(dirname))
     return subfolders
 
-print(fast_scandir("./chapter12_project"))
+print(fast_scandir(os.curdir))
 
 # Source - https://stackoverflow.com/questions/11968976/list-files-only-in-the-current-directory
 # Posted by sloth, modified by community. See post 'Timeline' for change history
 # Retrieved 2025-12-08, License - CC BY-SA 4.0
+# makes a list with all files in current directory(folder)
 
-import os
-files = [f for f in os.listdir('.') if os.path.isfile(f)]
-print(files)
+curdir_files = [f for f in os.listdir(os.curdir) if os.path.isfile(f)]
+print(curdir_files)
+
+# creates or modifies a file(depends in the file exists or not)
+def create_file():
+    new_file_name = input("Enter the name of the file to edit/create: ")
+    file_extension = input("Enter the file extension(i.e. txt, py, md): ")
+    new_file = new_file_name + "." + file_extension
+    file = open(new_file, "w")
+    file_entry = input("Enter what will be in the file(this will overwrite anything in the file): ")
+    file.write(file_entry)
+    file.close()
+
+def read_file():
+    # find file in current file list
+    file_num = input("Enter the number next to the file you want to read: ")
+    
 
 
+# os.getcwd
 
-
+# Files
+# Folders
+# Edit/Create
+# All Files
+# Back
 
 
 
