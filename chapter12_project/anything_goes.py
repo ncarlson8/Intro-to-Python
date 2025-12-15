@@ -11,6 +11,8 @@
 
 import os
 
+os.chdir("./chapter12_project")
+
 # lists all files and directories via path
 # 1 From here to * is sourced from https://www.geeksforgeeks.org/python/python-list-all-files-in-directory-and-subdirectories/
 def list_files_walk(start_path='.'):
@@ -19,8 +21,8 @@ def list_files_walk(start_path='.'):
             print(os.path.join(root, file))
 
 # Specify the directory path you want to start from
-directory_path = os.curdir
-list_files_walk(directory_path) # *
+# directory_path = os.curdir
+# list_files_walk(directory_path) # *
 
 # Source - https://stackoverflow.com/questions/973473/getting-a-list-of-all-subdirectories-in-the-current-directory
 # Posted by user136036, modified by community. See post 'Timeline' for change history
@@ -33,15 +35,16 @@ def fast_scandir(dirname):
         subfolders.extend(fast_scandir(dirname))
     return subfolders
 
-print(fast_scandir(os.curdir))
+# print(fast_scandir(os.curdir))
 
 # Source - https://stackoverflow.com/questions/11968976/list-files-only-in-the-current-directory
 # Posted by sloth, modified by community. See post 'Timeline' for change history
 # Retrieved 2025-12-08, License - CC BY-SA 4.0
 # makes a list with all files in current directory(folder)
 
-curdir_files = [f for f in os.listdir(os.curdir) if os.path.isfile(f)]
-print(curdir_files)
+def curdir_file_fun():
+    curdir_files = [f for f in os.listdir(os.curdir) if os.path.isfile(f)]
+    return curdir_files
 
 # creates or modifies a file(depends in the file exists or not)
 def create_file():
@@ -53,19 +56,67 @@ def create_file():
     file.write(file_entry)
     file.close()
 
-def read_file():
+def read_file(to_read):
     # find file in current file list
-    file_num = input("Enter the number next to the file you want to read: ")
-    
+    open_file = open(curdir_file_list[to_read-1], "r")
+    print(open_file.read())
+
+dir_list = ["/workspaces/Intro-to-Python/chapter12_project"]
+end = False    
+while end == False:
+    #print Files
+    print("\nFiles:")
+    curdir_file_list = curdir_file_fun()
+    curdir_folder_list = fast_scandir(os.curdir)
+    for file in curdir_file_list:
+        print(f"{curdir_file_list.index(file) + 1}. {file}")
+    print()
+    #print Folders
+    print("Folders:")
+    for folder in curdir_folder_list:
+        print(f"{len(curdir_file_list) + curdir_folder_list.index(folder) + 1}. {folder}")
+    print()
+    #print Edit/Create
+    print(f"{len(curdir_file_list) + len(curdir_folder_list) + 1}. Edit/Create")
+    #print All Files
+    print(f"{len(curdir_file_list) + len(curdir_folder_list) + 2}. All Files")
+    #print Back
+    print(f"{len(curdir_file_list) + len(curdir_folder_list) + 3}. Back")
+    #print End Program
+    print(f"{len(curdir_file_list) + len(curdir_folder_list) + 4}. End Program")
+    #take input
+    num = int(input("\nEnter the number next to the option you want to choose: "))
+    print()
+    #choose file
+    if num < 1 or num > (len(curdir_file_list) + len(curdir_folder_list) + 4):
+        print("Invalid number.")
+    elif num <= (len(curdir_file_list)):
+        read_file(num)
+    elif num <= (len(curdir_file_list) + len(curdir_folder_list)):
+        dir_list.append(curdir_folder_list[num - len(curdir_file_list) - 1])
+        os.chdir(dir_list[-1])
+    elif num == (len(curdir_file_list) + len(curdir_folder_list) + 1):
+        create_file()
+    elif num == (len(curdir_file_list) + len(curdir_folder_list) + 2):
+        list_files_walk(dir_list[-1])
+    elif num == (len(curdir_file_list) + len(curdir_folder_list) + 3):
+        if len(dir_list) == 1:
+            print("You cannot go back.")
+        else:
+            dir_list.pop(-1)
+            os.chdir(dir_list[-1])
+    elif num == (len(curdir_file_list) + len(curdir_folder_list) + 4):
+        end = True
 
 
-# os.getcwd
+# os.chdir()
 
 # Files
 # Folders
 # Edit/Create
 # All Files
 # Back
+# End Program
 
 
 
@@ -79,7 +130,7 @@ Remember to cite any sources you used to help you complete this project.
 You can do that here in this section or cite as comments throughout your code.
 
 1. How did you choose the goal of your program?
-
+It seemed like a reasonably simple program to make with room for improvement
 
 2. What part of this project challenged you the most? How did you work through that challenge?
 
