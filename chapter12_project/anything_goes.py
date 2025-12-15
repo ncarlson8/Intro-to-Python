@@ -87,29 +87,33 @@ while end == False:
     #take input
     num = int(input("\nEnter the number next to the option you want to choose: "))
     print()
-    #choose file
+    #error
     if num < 1 or num > (len(curdir_file_list) + len(curdir_folder_list) + 4):
         print("Invalid number.")
+    #choose file
     elif num <= (len(curdir_file_list)):
         read_file(num)
+    #choose folder
     elif num <= (len(curdir_file_list) + len(curdir_folder_list)):
         dir_list.append(curdir_folder_list[num - len(curdir_file_list) - 1])
         os.chdir(dir_list[-1])
+    #choose edit/create file
     elif num == (len(curdir_file_list) + len(curdir_folder_list) + 1):
         create_file()
+    #choose all files
     elif num == (len(curdir_file_list) + len(curdir_folder_list) + 2):
         list_files_walk(dir_list[-1])
+    #choose back
     elif num == (len(curdir_file_list) + len(curdir_folder_list) + 3):
         if len(dir_list) == 1:
             print("You cannot go back.")
         else:
             dir_list.pop(-1)
             os.chdir(dir_list[-1])
+    #choose end
     elif num == (len(curdir_file_list) + len(curdir_folder_list) + 4):
         end = True
 
-
-# os.chdir()
 
 # Files
 # Folders
@@ -133,9 +137,9 @@ You can do that here in this section or cite as comments throughout your code.
 It seemed like a reasonably simple program to make with room for improvement
 
 2. What part of this project challenged you the most? How did you work through that challenge?
-
+Lining up all of the information so that I could properly write the code. I wrote it down.
 
 3. If you had 10 more hours to improve or expand your program, what would you change? Why?
-
+I would include the ability to listen to mp3 and maybe mp4 files and also fix an issue with folders.
 
 '''
